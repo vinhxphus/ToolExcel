@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+
+  <Id>9B1D2110-3EED-4E7B-AB6A-DF5F64DBB995</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Excel Smart Formatter</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Excel Smart Formatter" />
+  <Description DefaultValue="Smart formatting tools for data cleanup, alignment, border, and Excel productivity." />
+  <IconUrl DefaultValue="https://vinhxphus.github.io/ToolExcel/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://vinhxphus.github.io/ToolExcel/icon-128.png" />
+  <SupportUrl DefaultValue="https://vinhxphus.github.io/ToolExcel/" />
+
+  <AppDomains>
+    <AppDomain>https://vinhxphus.github.io</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="ExcelApi" MinVersion="1.10" />
+    </Sets>
+  </Requirements>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://vinhxphus.github.io/ToolExcel/" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title" />
+            <Description resid="GetStarted.Description" />
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
+          </GetStarted>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabInsert">
+              <Group id="ExcelSmartFormatter.Group">
+                <Label resid="CommandsGroup.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16" />
+                  <bt:Image size="32" resid="Icon.32x32" />
+                  <bt:Image size="80" resid="Icon.80x80" />
+                </Icon>
+
+                <Control xsi:type="Button" id="ExcelSmartFormatter.TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label" />
+                    <Description resid="TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16" />
+                    <bt:Image size="32" resid="Icon.32x32" />
+                    <bt:Image size="80" resid="Icon.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>TaskpaneId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://vinhxphus.github.io/ToolExcel/icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://vinhxphus.github.io/ToolExcel/icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://vinhxphus.github.io/ToolExcel/icon-80.png" />
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://vinhxphus.github.io/ToolExcel/" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://vinhxphus.github.io/ToolExcel/" />
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Excel Smart Formatter is ready" />
+        <bt:String id="CommandsGroup.Label" DefaultValue="Smart Tools" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Smart Formatter" />
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Open the task pane to clean, format, and align your Excel data." />
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open the Smart Formatter task pane to highlight duplicates, trim spaces, and apply styling." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

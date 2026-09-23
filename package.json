@@ -1,0 +1,21 @@
+{
+  "name": "excel-smart-formatter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "cert": "npx office-addin-dev-certs install",
+    "office:start": "npx office-addin-debugging start manifest.xml --dev-server-url https://localhost:3000",
+    "office:debug": "npx office-addin-debugging start manifest.xml --dev-server-url https://localhost:3000 --debug",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "office-addin-debugging": "^7.0.0",
+    "office-addin-dev-certs": "^3.0.0",
+    "sharp": "^0.35.4",
+    "vite": "^5.4.10"
+  }
+}
