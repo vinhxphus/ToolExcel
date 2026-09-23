@@ -1,0 +1,189 @@
+:root {
+  --font: Cambria, Georgia, "Times New Roman", serif;
+  --panel: #ffffff;
+  --panel-soft: #fbf8f3;
+  --line: #e8ddd0;
+  --text: #2b2420;
+  --muted: #8a7c6c;
+  --accent-strong: #a34a2e;
+  --accent-soft: #f3e0d3;
+  --success: #3f8f6d;
+  --shadow: 0 14px 32px rgba(43, 36, 28, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font);
+  background: linear-gradient(180deg, #f9f5ef 0%, #f2ede4 100%);
+  color: var(--text);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 18px;
+}
+
+.app-shell {
+  width: min(100%, 540px);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 14px 2px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.tool-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.section-label {
+  margin: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+button.tool {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 9px 4px;
+  background: var(--panel-soft);
+  cursor: pointer;
+  color: var(--text);
+  font-family: var(--font);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+button.tool:hover {
+  transform: translateY(-1px);
+  border-color: #d9c6b0;
+  box-shadow: 0 8px 16px rgba(43, 36, 28, 0.06);
+  background: var(--panel);
+}
+
+button.tool .icon-tile {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+button.tool .icon-tile svg {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-text {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1;
+}
+
+button.tool .label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+button.tool.primary {
+  background: linear-gradient(135deg, #f0d2bb 0%, #ecd6c0 100%);
+  border-color: rgba(163, 74, 46, 0.25);
+}
+
+button.tool.primary .icon-tile {
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--accent-strong);
+}
+
+button.tool.primary .label {
+  color: var(--accent-strong);
+}
+
+button.tool.wide {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  text-align: left;
+  padding: 10px 12px;
+}
+
+button.tool.wide .label-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+button.tool:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 14px 14px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #faf6f0;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 3px rgba(63, 143, 109, 0.14);
+  flex-shrink: 0;
+}
+
+#status {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.3;
+}
